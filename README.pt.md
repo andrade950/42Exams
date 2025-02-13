@@ -32,11 +32,8 @@ O Exam Rank 02 é dividido em 4 níveis e tem um total de 57 exercícios.
   |          | snake_to_camel        |         |         |
   |          | swap_bits        |         |         |
   |          | union        |         |         |
-  |          | wdmatch        |         |         |
-  
-  
-      
+  |          | wdmatch        |         |         |   
 
   </details>
-
+  
   ---
