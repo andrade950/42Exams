@@ -28,12 +28,12 @@ char	*ft_strcpy(char *s1, char *s2, int n)
 char	**ft_split(char *str)
 {
 	int i = 0;
+	int j = 0;
 	int wc = 0;
-	char **array;
 	int start = 0;
 	int end = 0;
 	int w_len = 0;
-	int j = 0;
+	char **array;
 
 	while (str[i])
 	{
