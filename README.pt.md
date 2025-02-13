@@ -1,5 +1,7 @@
 # 42Exams
 
+[Read in English](README.md)
+
 ## Exercícios Rank 02
 
 Este repositório contém os exercícios e seus respectivos enunciados (subjects) dos exames feitos ao longo da 42.
