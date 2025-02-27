@@ -6,12 +6,12 @@
 
 Este repositório contém os exercícios e seus respectivos enunciados (subjects) dos exames feitos ao longo da 42.
 
-### [ExamRank02](ExamRank02)
+### 💢 [ExamRank02](ExamRank02)
 
 O Exam Rank 02 é dividido em 4 níveis e tem um total de 57 exercícios.
 
  <details>
-     <summary>ℹ️ Exercícios do ExamRank02</summary><br>
+     <summary> 🛈 Exercícios do ExamRank02</summary><br>
 
   | [Nível 01](ExamRank02/Level01) | [Nível 02](ExamRank02/Level02) | [Nível 03](ExamRank02/Level03) | [Nível 04](ExamRank02/Level04) |
   |-----------|---------|---------|---------|
