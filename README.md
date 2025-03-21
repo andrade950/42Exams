@@ -38,4 +38,15 @@ The Exam Rank 02 is divided into 4 levels and consists of a total of 57 exercise
 
   </details>
   
-  ---
+
+### 🗒️ [ExamRank03](ExamRank03)
+
+
+The Exam Rank 03 consists of a question that may vary between these two.
+
+ - 📄 [get_next_line](ExamRank03/get_next_line)
+ 
+ - 🖨️ [ft_printf](ExamRank03/ft_printf)
+
+
+---
