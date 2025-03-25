@@ -30,7 +30,7 @@ int	print_str(char *str)
 int	print_nbr(int nbr)
 {
 	char	c;
-	int		counter;
+	int	counter;
 
 	counter = 0;
 	if(nbr == INT_MIN)
@@ -60,7 +60,7 @@ int	print_nbr(int nbr)
 int	print_xnbr(unsigned int xnbr)
 {
 	char	base[16] = "0123456789abcdef";
-	int		counter;
+	int	counter;
 
 	counter = 0;
 	if (xnbr / 16  > 0)
@@ -71,7 +71,7 @@ int	print_xnbr(unsigned int xnbr)
 
 int	ft_printf(const char *z, ... )
 {
-	int		counter;
+	int	counter;
 	va_list	ap;
 
 	counter = 0;
