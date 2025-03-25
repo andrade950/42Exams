@@ -19,7 +19,7 @@
 
 char	*ft_strdup(char *str)
 {
-	int		x;
+	int	x;
 	char	*dest;
 	
 	x = 0;
@@ -39,11 +39,12 @@ char	*ft_strdup(char *str)
 char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE];
-	int			x;
+	int		x;
 	char		line[70000];
 	static int	b_read;
-	static int	b_pos;	x = 0;
-
+	static int	b_pos;	
+	
+	x = 0;
 	if(fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	while(1)
