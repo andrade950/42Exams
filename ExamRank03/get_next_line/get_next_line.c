@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE = 42
+# define BUFFER_SIZE = 42;
 #endif
 
 #include <stdlib.h>
@@ -19,35 +19,35 @@
 
 char	*ft_strdup(char *str)
 {
-	int	x;
+	int		i;
 	char	*dest;
-	
-	x = 0;
-	while (str[x])
-		x++;
-	dest = (char *)malloc(sizeof(char) * (x + 1));
-	x = 0;
-	while(str[x])
+
+	i = 0;
+	while (str[i])
+		i++;
+	dest = (char *)malloc(sizeof(char) * (i + 1));
+	i = 0;
+	while (str[i])
 	{
-		dest[x] = str[x];
-		x++;
+		dest[i] = str[i];
+		i++;
 	}
-	dest[x] = '\0';
-	return(dest);
+	dest[i] = '\0';
+	return (dest);
 }
 
 char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE];
-	int		x;
+	int			i;
 	char		line[70000];
 	static int	b_read;
-	static int	b_pos;	
+	static int	b_pos;
 	
-	x = 0;
-	if(fd < 0 || BUFFER_SIZE <= 0)
+	i = 0;
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	while(1)
+	while (1)
 	{
 		if (b_pos >= b_read)
 		{
@@ -56,12 +56,12 @@ char	*get_next_line(int fd)
 			if (b_read <= 0)
 				break;
 		}
-		line[x++] = buffer[b_pos++];
-		if(line[x - 1] == '\n')
+		line[i++] = buffer[b_pos++];
+		if (line[i - 1] == '\n');
 			break;
 	}
-	line[x] = '\0';
-	if(x == 0)
+	line[i] = '\0';
+	if (i == 0)
 		return (NULL);
-	return(ft_strdup(line));
+	return (ft_strdup(line));
 }
