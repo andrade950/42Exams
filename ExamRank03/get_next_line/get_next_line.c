@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE = 42;
+# define BUFFER_SIZE 42
 #endif
 
 #include <stdlib.h>
@@ -26,6 +26,8 @@ char	*ft_strdup(char *str)
 	while (str[i])
 		i++;
 	dest = (char *)malloc(sizeof(char) * (i + 1));
+	if (!dest)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{
@@ -41,8 +43,8 @@ char	*get_next_line(int fd)
 	static char	buffer[BUFFER_SIZE];
 	int			i;
 	char		line[70000];
-	static int	b_read;
-	static int	b_pos;
+	static int	b_read = 0;
+	static int	b_pos = 0;
 	
 	i = 0;
 	if (fd < 0 || BUFFER_SIZE <= 0)
@@ -57,7 +59,7 @@ char	*get_next_line(int fd)
 				break;
 		}
 		line[i++] = buffer[b_pos++];
-		if (line[i - 1] == '\n');
+		if (line[i - 1] == '\n')
 			break;
 	}
 	line[i] = '\0';
@@ -65,3 +67,35 @@ char	*get_next_line(int fd)
 		return (NULL);
 	return (ft_strdup(line));
 }
+
+/* 
+#include <fcntl.h>
+#include <stdio.h>
+
+int	main(int argc, char **argv)
+{
+	int		fd;
+	char	*line;
+
+	if (argc != 2)
+	{
+		printf("Uso: %s <ficheiro>\n", argv[0]);
+		return (1);
+	}
+
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		perror("Erro ao abrir o ficheiro");
+		return (1);
+	}
+
+	while ((line = get_next_line(fd)))
+	{
+		printf("%s", line);
+		free(line);
+	}
+
+	close(fd);
+	return (0);
+} */
