@@ -11,42 +11,42 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <limits.h>
 #include <stdarg.h>
 
 int	print_str(char *str)
 {
-	int	x;
+	int	i;
 
 	if (!str)
-		return(write(1, "(null)", 6));
-	x = 0;
-	while (str[x])
-		x++;
-	return(write(1, str, x));
+		return (write(1, "(null)", 6));
+	i = 0;
+	while (str[i])
+		i++;
+	return (write(1, str, i));
 }
 
 int	print_nbr(int nbr)
 {
 	char	c;
-	int	counter;
+	int		counter;
 
 	counter = 0;
-	if(nbr == INT_MIN)
+	if (nbr == INT_MIN)
 	{
 		counter += write(1, "-2147483648", 11);
-		return(counter);
+		return (counter);
 	}
-	if(nbr < 0)
+	if (nbr < 0)
 	{
 		nbr *= -1;
 		counter += write(1, "-", 1);
 	}
-	if(nbr > 9)
+	if (nbr > 9)
 	{
 		counter += print_nbr(nbr / 10);
-		c = nbr % 10 + 48;
+		c = (nbr % 10) + 48;
 		counter += write(1, &c, 1);
 	}
 	else
@@ -54,57 +54,56 @@ int	print_nbr(int nbr)
 		c = nbr + 48;
 		counter += write(1, &c, 1);
 	}
-	return(counter);
+	return (counter);
 }
 
 int	print_xnbr(unsigned int xnbr)
 {
 	char	base[16] = "0123456789abcdef";
-	int	counter;
+	int		counter;
 
 	counter = 0;
-	if (xnbr / 16  > 0)
+	if (xnbr / 16 > 0)
 		counter += print_xnbr(xnbr / 16);
 	counter += write(1, &base[xnbr % 16], 1);
 	return (counter);
 }
 
-int	ft_printf(const char *z, ... )
+int	ft_printf(const char *type, ...)
 {
-	int	counter;
 	va_list	ap;
+	int		counter;
 
+	va_start(ap, type);
 	counter = 0;
-	va_start(ap, z);
-	while(*z)
+	while (*type)
 	{
-		if(*z == '%')
+		if (*type == '%')
 		{
-			z++;
-			if(*z == 's')
+			type++;
+			if (*type == 's')
 				counter += print_str(va_arg(ap, char *));
-			else if(*z == 'd')
-				counter+= print_nbr(va_arg(ap, int));
-			else if(*z == 'x')
+			else if (*type == 'd')
+				counter += print_nbr(va_arg(ap, int));
+			else if (*type == 'x')
 				counter += print_xnbr(va_arg(ap, unsigned int));
-			z++;
+			type++;
 		}
 		else
 		{
-			counter += write(1, z, 1);
-			z++;
+			counter += write(1, type, 1);
+			type++;
 		}
 	}
 	return (counter);
 }
 
-/*
-int	main()
+/* int	main()
 {
-	int	x1;
-	int	x2;
+	int		n1;
+	int		n2;
 	char	s[4] = "ola";
-	x1 = 42;
-	x2 = 42;
-	ft_printf("BOAS!! e agora,\n %s , %d , %x, \n", s, x1, x2);
-}*/
+	n1 = 42;
+	n2 = -42;
+	ft_printf("BOAS!! e agora,\n %s , %d , %x, \n", s, n1, n2);
+} */
