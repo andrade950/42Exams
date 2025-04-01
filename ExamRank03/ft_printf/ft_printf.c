@@ -69,30 +69,30 @@ int	print_xnbr(unsigned int xnbr)
 	return (counter);
 }
 
-int	ft_printf(const char *type, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	int		counter;
 
-	va_start(ap, type);
+	va_start(ap, str);
 	counter = 0;
-	while (*type)
+	while (*str)
 	{
-		if (*type == '%')
+		if (*str == '%')
 		{
-			type++;
-			if (*type == 's')
+			str++;
+			if (*str == 's')
 				counter += print_str(va_arg(ap, char *));
-			else if (*type == 'd')
+			else if (*str == 'd')
 				counter += print_nbr(va_arg(ap, int));
-			else if (*type == 'x')
+			else if (*str == 'x')
 				counter += print_xnbr(va_arg(ap, unsigned int));
-			type++;
+			str++;
 		}
 		else
 		{
-			counter += write(1, type, 1);
-			type++;
+			counter += write(1, str, 1);
+			str++;
 		}
 	}
 	return (counter);
