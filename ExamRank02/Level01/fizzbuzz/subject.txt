@@ -36,4 +36,3 @@ fizzbuzz
 fizz
 buzz
 $>
-```

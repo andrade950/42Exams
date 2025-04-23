@@ -18,4 +18,3 @@ $> ./print_hex "5156454" | cat -e
 4eae66$
 $> ./print_hex | cat -e
 $
-```

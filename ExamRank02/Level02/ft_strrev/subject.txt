@@ -10,5 +10,3 @@ It must return its parameter.
 Your function must be declared as follows:
 
 char    *ft_strrev(char *str);
-
-```

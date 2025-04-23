@@ -13,4 +13,3 @@ members, in ascending order.
 Doubles must be preserved.
 
 Input is always coherent.
-```
