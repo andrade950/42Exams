@@ -1,6 +1,3 @@
-## Subject
-
-```
 Assignment name  : reverse_bits
 Expected files   : reverse_bits.c
 Allowed functions:

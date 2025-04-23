@@ -1,6 +1,3 @@
-## Subject
-
-```
 Assignment name	: ft_strpbrk
 Expected files	: ft_strpbrk.c
 Allowed functions: None

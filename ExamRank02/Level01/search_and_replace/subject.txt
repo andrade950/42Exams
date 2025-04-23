@@ -1,6 +1,3 @@
-## Subject
-
-```
 Assignment name  : search_and_replace
 Expected files   : search_and_replace.c
 Allowed functions: write, exit

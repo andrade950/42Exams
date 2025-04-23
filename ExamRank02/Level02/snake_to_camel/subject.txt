@@ -1,6 +1,3 @@
-## Subject
-
-```
 Assignment name  : snake_to_camel
 Expected files   : snake_to_camel.c
 Allowed functions: malloc, free, realloc, write
