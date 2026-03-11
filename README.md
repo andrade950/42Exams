@@ -49,4 +49,13 @@ The Exam Rank 03 consists of a question that may vary between these two.
  - 🖨️ [ft_printf](ExamRank03/ft_printf)
 
 
+### ⚙️ [ExamRank04](ExamRank04)
+
+The Exam Rank 04 is divided into 2 levels and focuses on system programming and expression parsing.
+
+  | [Level 01](ExamRank04/Level01) | [Level 02](ExamRank04/Level02) |
+  |--------------------------------|--------------------------------|
+  | ft_popen                       | vbc                            |
+  | picoshell                      |                                |
+
 ---
